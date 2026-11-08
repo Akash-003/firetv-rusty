@@ -1,0 +1,20 @@
+# Python venv for the ADB client (tv recreates it)
+.venv/
+__pycache__/
+
+# Gradle / Android build output
+launcher/.gradle/
+launcher/build/
+launcher/app/build/
+launcher/local.properties
+*.apk
+.idea/
+*.iml
+
+# TV snapshot: contains device identifiers (Android ID, Bluetooth MAC). Created by backup.sh / debloat.sh.
+backup/
+
+# Scratch screenshots from ./tv shot
+shots/
+
+.DS_Store

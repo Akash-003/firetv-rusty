@@ -1,0 +1,28 @@
+<!-- Grid row height is exactly ROW_H_DP (106dp) in HomeActivity.
+     clipToPadding off: the focused banner scales up into the top padding. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="106dp"
+    android:clipToPadding="false"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingTop="8dp">
+
+    <ImageView
+        android:id="@+id/banner"
+        android:layout_width="116dp"
+        android:layout_height="65dp"
+        android:background="@drawable/tile_bg" />
+
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:alpha="0"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:singleLine="true"
+        android:textColor="#E6FFFFFF"
+        android:textSize="13sp" />
+</LinearLayout>

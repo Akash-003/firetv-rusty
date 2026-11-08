@@ -1,0 +1,92 @@
+[
+ {
+  "name": "Aaj Tak",
+  "link": "intent:#Intent;component=com.zee5.amazon/com.zee5.android.launch.presentation.AppStartActivity;S.AFS_LIVE_CONTENT_ID=0-9-aajtak;B.FROM_AFS_LIVE=true;i.channel_deep_link_intent_prim_key=-159970267;end",
+  "logo": "aajtak.png",
+  "bg": "#FFFFFF"
+ },
+ {
+  "name": "Zee News",
+  "link": "intent:#Intent;component=com.zee5.amazon/com.zee5.android.launch.presentation.AppStartActivity;S.AFS_LIVE_CONTENT_ID=0-9-zeenews;B.FROM_AFS_LIVE=true;i.channel_deep_link_intent_prim_key=158369148;end",
+  "logo": "zeenews.png",
+  "bg": "#FFFFFF"
+ },
+ {
+  "name": "India Today",
+  "link": "intent:#Intent;component=com.zee5.amazon/com.zee5.android.launch.presentation.AppStartActivity;S.AFS_LIVE_CONTENT_ID=0-9-indiatoday;B.FROM_AFS_LIVE=true;i.channel_deep_link_intent_prim_key=57069819;end",
+  "logo": "indiatoday.png",
+  "bg": "#FFFFFF"
+ },
+ {
+  "name": "Zee Business",
+  "link": "intent:#Intent;component=com.zee5.amazon/com.zee5.android.launch.presentation.AppStartActivity;S.AFS_LIVE_CONTENT_ID=0-9-zeebusiness;B.FROM_AFS_LIVE=true;i.channel_deep_link_intent_prim_key=-1826472471;end",
+  "logo": "zeebusiness.png",
+  "bg": "#FFFFFF"
+ },
+ {
+  "name": "TV9 Bharatvarsh",
+  "link": "intent:#Intent;component=com.zee5.amazon/com.zee5.android.launch.presentation.AppStartActivity;S.AFS_LIVE_CONTENT_ID=0-9-251;B.FROM_AFS_LIVE=true;i.channel_deep_link_intent_prim_key=992846557;end",
+  "logo": "tv9bharatvarsh.png",
+  "bg": "#FFFFFF"
+ },
+ {
+  "name": "News 9",
+  "link": "intent:#Intent;component=com.zee5.amazon/com.zee5.android.launch.presentation.AppStartActivity;S.AFS_LIVE_CONTENT_ID=0-9-261;B.FROM_AFS_LIVE=true;i.channel_deep_link_intent_prim_key=992846588;end",
+  "logo": "news9.png",
+  "bg": "#FFFFFF"
+ },
+ {
+  "name": "WION",
+  "link": "intent:#Intent;component=com.zee5.amazon/com.zee5.android.launch.presentation.AppStartActivity;S.AFS_LIVE_CONTENT_ID=0-9-wion;B.FROM_AFS_LIVE=true;i.channel_deep_link_intent_prim_key=715579778;end",
+  "logo": "wion.png",
+  "bg": "#FFFFFF"
+ },
+ {
+  "name": "Good News Today",
+  "link": "intent:#Intent;component=com.zee5.amazon/com.zee5.android.launch.presentation.AppStartActivity;S.AFS_LIVE_CONTENT_ID=0-9-255;B.FROM_AFS_LIVE=true;i.channel_deep_link_intent_prim_key=992846561;end",
+  "logo": "gnt.png",
+  "bg": "#FFFFFF"
+ },
+ {
+  "name": "Zee Bharat",
+  "link": "intent:#Intent;component=com.zee5.amazon/com.zee5.android.launch.presentation.AppStartActivity;S.AFS_LIVE_CONTENT_ID=0-9-zeehindustan;B.FROM_AFS_LIVE=true;i.channel_deep_link_intent_prim_key=1536401187;end",
+  "logo": "zeebharat.png",
+  "bg": "#FFFFFF"
+ },
+ {
+  "name": "Zee Delhi NCR Haryana",
+  "link": "intent:#Intent;component=com.zee5.amazon/com.zee5.android.launch.presentation.AppStartActivity;S.AFS_LIVE_CONTENT_ID=0-9-zeekalinganews;B.FROM_AFS_LIVE=true;i.channel_deep_link_intent_prim_key=949765407;end",
+  "logo": "zeedelhincr.png",
+  "bg": "#FFFFFF"
+ },
+ {
+  "name": "Zee News Uttar Pradesh Uttrakhand",
+  "link": "intent:#Intent;component=com.zee5.amazon/com.zee5.android.launch.presentation.AppStartActivity;S.AFS_LIVE_CONTENT_ID=0-9-channel_265145625;B.FROM_AFS_LIVE=true;i.channel_deep_link_intent_prim_key=-2125326069;end",
+  "logo": "zeeupuk.png",
+  "bg": "#FFFFFF"
+ },
+ {
+  "name": "Zee Bihar Jharkhand",
+  "link": "intent:#Intent;component=com.zee5.amazon/com.zee5.android.launch.presentation.AppStartActivity;S.AFS_LIVE_CONTENT_ID=0-9-zeebiharjharkhand;B.FROM_AFS_LIVE=true;i.channel_deep_link_intent_prim_key=1503415682;end",
+  "logo": "zeebiharjharkhand.png",
+  "bg": "#FFFFFF"
+ },
+ {
+  "name": "Zee Madhya Pradesh Chhattisgarh",
+  "link": "intent:#Intent;component=com.zee5.amazon/com.zee5.android.launch.presentation.AppStartActivity;S.AFS_LIVE_CONTENT_ID=0-9-zeemadhyapradeshchat;B.FROM_AFS_LIVE=true;i.channel_deep_link_intent_prim_key=886708324;end",
+  "logo": "zeempcg.png",
+  "bg": "#FFFFFF"
+ },
+ {
+  "name": "Zee Rajasthan News",
+  "link": "intent:#Intent;component=com.zee5.amazon/com.zee5.android.launch.presentation.AppStartActivity;S.AFS_LIVE_CONTENT_ID=0-9-zeerajasthannews;B.FROM_AFS_LIVE=true;i.channel_deep_link_intent_prim_key=-998481928;end",
+  "logo": "zeerajasthan.png",
+  "bg": "#FFFFFF"
+ },
+ {
+  "name": "Zee Action",
+  "link": "intent:#Intent;component=com.zee5.amazon/com.zee5.android.launch.presentation.AppStartActivity;S.AFS_LIVE_CONTENT_ID=0-9-zeeaction;B.FROM_AFS_LIVE=true;i.channel_deep_link_intent_prim_key=1494774431;end",
+  "logo": "zeeaction.png",
+  "bg": "#FFFFFF"
+ }
+]

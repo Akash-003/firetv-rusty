@@ -1,0 +1,53 @@
+# telemetry / analytics
+com.amazon.device.metrics
+com.amazon.client.metrics.api
+com.amazon.tv.fw.metrics
+com.amazon.wirelessmetrics.service
+com.amazon.device.crashmanager
+com.amazon.device.logmanager
+com.amazon.dp.logger
+com.amazon.logan
+com.amazon.perfc
+com.amazon.perfcollection
+com.amazon.neo.minerva
+com.amazon.neo.minerva.logcat
+com.amazon.tv.acr
+com.amazon.hybridadidservice
+com.amazon.kso.blackbird
+com.amazon.tv.developer.dataservice
+com.amazon.connectivitydiag
+com.amazon.device.rdmapplication
+com.fireos.usagestats.proxy
+# content & ad services
+com.amazon.bueller.photos
+com.amazon.bueller.music
+com.amazon.media.recommendations
+com.amazon.ftvads.deeplinking
+com.amazon.sneakpeek
+com.amazon.shoptv.client
+com.amazon.shoptv.firetv.client
+com.amazon.avls.experience
+# background services
+com.amazon.whad
+com.amazon.whasettings
+com.amazon.wha.mediabrowserservice
+com.amazon.tv.matter
+com.amazon.tv.mattercohost
+com.amazon.whisperjoin.middleware.np
+com.amazon.tv.ffsprovisioneeclient
+com.amazon.tv.ottssocompanionapp
+com.amznfuse.operatorredirection
+com.android.printspooler
+com.android.bluetoothmidiservice
+# preloaded apps
+com.amazon.gamehub
+com.amazon.tahoe
+com.amazon.storm.lightning.tutorial
+com.amazon.tmm.tutorial
+com.amazon.tv.releasenotes
+com.amazon.tv.csapp
+com.amazon.tv.website_launcher
+com.amazon.cloud9
+# streaming apps not used
+tv.airtel.xstream.tvapp
+com.stremio.one

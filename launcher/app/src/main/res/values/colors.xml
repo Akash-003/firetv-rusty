@@ -1,0 +1,4 @@
+<resources>
+    <!-- Ruska-inspired: blue-black instead of pure black -->
+    <color name="bg">#FF07080D</color>
+</resources>

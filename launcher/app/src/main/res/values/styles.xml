@@ -1,0 +1,10 @@
+<resources>
+    <style name="Home" parent="@android:style/Theme.Material.NoActionBar.Fullscreen">
+        <item name="android:windowBackground">@color/bg</item>
+        <item name="android:colorBackground">@color/bg</item>
+        <item name="android:windowShowWallpaper">false</item>
+    </style>
+    <!-- Edit to change the greeting name -->
+    <string name="greeting_name">Akash</string>
+    <string name="service_desc">Opens Rusty when you press the remote\'s Menu button, and once after the TV starts. Reads no screen content.</string>
+</resources>

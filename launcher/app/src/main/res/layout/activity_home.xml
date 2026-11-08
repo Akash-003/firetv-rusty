@@ -1,0 +1,75 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg">
+
+    <!-- Wallpaper, slightly oversized so it can drift a little (focus parallax, ambient drift) -->
+    <FrameLayout
+        android:id="@+id/scenery"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleX="1.06"
+        android:scaleY="1.06">
+
+        <ImageView
+            android:id="@+id/wallpaper"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <!-- 48dp side padding = dock band edge; 6 equal 144dp spans line grid columns up with dock slots -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:descendantFocusability="blocksDescendants"
+        android:focusable="false"
+        android:overScrollMode="never"
+        android:paddingStart="48dp"
+        android:paddingEnd="48dp"
+        android:paddingBottom="48dp" />
+
+    <dev.akash.rusty.GlassView
+        android:id="@+id/glass"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Ambient mode: after a few idle minutes only this big clock stays over the wallpaper -->
+    <LinearLayout
+        android:id="@+id/ambient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:layout_marginStart="64dp"
+        android:layout_marginBottom="56dp"
+        android:alpha="0"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextClock
+            android:id="@+id/ambient_clock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:format12Hour="h:mm"
+            android:format24Hour="H:mm"
+            android:includeFontPadding="false"
+            android:textColor="#F2FFFFFF"
+            android:textSize="140sp" />
+
+        <TextClock
+            android:id="@+id/ambient_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:format12Hour="EEEE d MMMM"
+            android:format24Hour="EEEE d MMMM"
+            android:letterSpacing="0.28"
+            android:textAllCaps="true"
+            android:textColor="#99FFFFFF"
+            android:textSize="18sp" />
+    </LinearLayout>
+</FrameLayout>

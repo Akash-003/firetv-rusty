@@ -1,0 +1,7 @@
+#!/bin/sh
+# ponytail: venv's copied python is blocked by macOS Local Network privacy; the Apple-signed /usr/bin/python3 isn't
+D="$(cd "$(dirname "$0")" && pwd)"
+if [ ! -d "$D/.venv" ]; then
+  /usr/bin/python3 -m venv "$D/.venv" && "$D/.venv/bin/pip" -q install adb-shell >&2
+fi
+PYTHONPATH="$D/.venv/lib/python3.9/site-packages" exec /usr/bin/python3 "$D/tv.py" "$@"

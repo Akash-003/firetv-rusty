@@ -1,0 +1,12 @@
+<!-- Small uppercase heading above a grid section; height is TITLE_H_DP in HomeActivity.
+     14dp start padding lines it up with the left edge of the first tile in a 144dp cell. -->
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="44dp"
+    android:gravity="bottom|start"
+    android:letterSpacing="0.28"
+    android:paddingStart="14dp"
+    android:paddingBottom="6dp"
+    android:textAllCaps="true"
+    android:textColor="#80FFFFFF"
+    android:textSize="13sp" />
