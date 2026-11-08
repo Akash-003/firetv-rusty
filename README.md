@@ -40,9 +40,9 @@ macOS Local Network privacy blocks Homebrew's `adb` ("No route to host") and the
 
 ## Debloat
 
-41 packages disabled with `pm disable-user --user 0` (never uninstalled): Amazon telemetry, ad and recommendation services, multi-room audio, Matter, setup helpers, preloaded apps, Silk, Airtel Xstream and Stremio. Full list with categories: `debloat_list.txt`.
+42 packages disabled with `pm disable-user --user 0` (never uninstalled): Amazon telemetry, ad and recommendation services, multi-room audio, Matter, setup helpers, preloaded apps, Silk, Amazon miniTV (a stub that only opens the Appstore), Airtel Xstream and Stremio. Full list with categories: `debloat_list.txt`.
 
-Kept at your request: Prime Video, YouTube, Netflix, JioHotstar, SonyLIV, ZEE5, Appstore, Live TV, miniTV, Alexa, casting, screen mirroring, OS updates.
+Kept at your request: Prime Video, YouTube, Netflix, JioHotstar, SonyLIV, ZEE5, Appstore, Live TV, Alexa, casting, screen mirroring, OS updates.
 
 Fire OS refused 7 as protected (they stay on): `device.metrics`, `device.crashmanager`, `device.logmanager`, `device.rdmapplication`, `fireos.usagestats.proxy`, `ftvads.deeplinking`, `tv.csapp`.
 
@@ -123,7 +123,7 @@ printf 'com.netflix.ninja\ncom.amazon.firetv.youtube\nin.startv.hotstar\ncom.ama
 ./tv push dock.txt /sdcard/Android/data/dev.akash.rusty/files/dock.txt
 ```
 
-Package names: JioHotstar `in.startv.hotstar`, Prime Video `com.amazon.firebat`, Netflix `com.netflix.ninja`, YouTube `com.amazon.firetv.youtube`, SonyLIV `com.onemainstream.sonyliv.android`, ZEE5 `com.zee5.amazon`, miniTV `com.amazon.minitv.android.app`. List all launchable apps with `./tv sh 'pm list packages'`.
+Package names: JioHotstar `in.startv.hotstar`, Prime Video `com.amazon.firebat`, Netflix `com.netflix.ninja`, YouTube `com.amazon.firetv.youtube`, SonyLIV `com.onemainstream.sonyliv.android`, ZEE5 `com.zee5.amazon`. List all launchable apps with `./tv sh 'pm list packages'`.
 
 To go back to the built-in order, delete the file:
 

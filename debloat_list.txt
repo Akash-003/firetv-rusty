@@ -48,6 +48,7 @@ com.amazon.tv.releasenotes
 com.amazon.tv.csapp
 com.amazon.tv.website_launcher
 com.amazon.cloud9
+com.amazon.minitv.android.app
 # streaming apps not used
 tv.airtel.xstream.tvapp
 com.stremio.one
