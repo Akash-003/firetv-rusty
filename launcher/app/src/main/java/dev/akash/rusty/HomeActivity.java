@@ -775,7 +775,8 @@ public class HomeActivity extends Activity {
 
     private void updateGreeting() {
         int h = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
-        String part = h >= 4 && h < 12 ? "Good morning" : h >= 12 && h < 17 ? "Good afternoon" : "Good evening";
+        String part = h >= 4 && h < 12 ? "Good morning" : h >= 12 && h < 17 ? "Good afternoon"
+                : h >= 17 && h < 22 ? "Good evening" : "Good night"; // night: 10 pm to 4 am
         greeting.setText(part + ", " + getString(R.string.greeting_name));
     }
 
