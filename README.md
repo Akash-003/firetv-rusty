@@ -16,7 +16,7 @@ Device: Amazon Fire TV Stick 3rd gen (AFTSSS, "sheldonp"), Fire OS 7.7.1.7 / And
 | `backup.sh` | Snapshots the TV before any change into `backup/` (gitignored: it holds device identifiers): full / system / third-party / disabled package lists, `getprop`, all `settings` namespaces, the original home activity, a baseline screenshot. |
 | `debloat.sh` + `debloat_list.txt` | Disables every package in the list, one `pm` call each, and logs successes to `backup/disabled_by_us.txt`. |
 | `restore.sh` | Undoes everything: re-enables every logged package, switches the Rusty service off, hands Home back to Amazon. |
-| `build_install.sh` | Builds the launcher (debug APK), installs it, grants the Wi-Fi-name permission, pushes channels and the wallpaper. |
+| `build_install.sh` | Builds the launcher (R8-optimised release APK), installs it, grants the Wi-Fi-name permission, pushes channels and the wallpaper. |
 | `enable_home_button.sh` | Switches on Rusty's accessibility service (see "How Rusty is reached"). |
 | `collect_channels.py` | Rebuilds `channels/channels.json` from the TV's Live TV guide (see "Live channels"). |
 | `push_channels.sh` | Copies `channels/channels.json` (and any logos) to Rusty on the TV. `build_install.sh` runs it too. |
@@ -113,6 +113,17 @@ All of this comes from Rusty's accessibility service (`HomeKeyService`). It only
 ```
 
 This needs JDK 21 and the Android SDK at `~/Library/Android/sdk` (override with `JAVA_HOME` / `ANDROID_HOME`). It uses Gradle 9.7.1 and AGP 9.4.0. Reinstalling keeps the service enabled.
+
+It builds the **release** variant: R8 shrinking and optimisation plus resource shrinking, signed with the local debug key (`signingConfig = signingConfigs.debug`) so it updates the installed app in place. Building on another machine means a different debug key: uninstall Rusty first, then rerun this and `./enable_home_button.sh`. Measured against the debug build on this stick:
+
+| | Debug | Release (R8) |
+|---|---|---|
+| APK size | 7.1 MB | 367 KB |
+| Warm start (5 runs) | 147–507 ms, median 394 | 128–243 ms, median 160 |
+| Code memory | 6.0 MB | 1.9 MB |
+| Java heap | 4.6 MB | 2.8 MB |
+
+Android compiles the release build ahead of time at install (`speed-profile`, using AndroidX's bundled startup profile); a debug build is marked debuggable and runs mostly interpreted.
 
 ### Change the dock order or apps (no rebuild)
 

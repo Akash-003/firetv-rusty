@@ -10,6 +10,16 @@ android {
         versionCode 1
         versionName "1.0"
     }
+    buildTypes {
+        release {
+            minifyEnabled = true      // R8: shrink, optimise, obfuscate
+            shrinkResources = true
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt")
+            // Personal sideloaded app: sign with the debug key so a release build updates the installed
+            // app in place (same signature), keeping its files and the Menu-button accessibility setting.
+            signingConfig = signingConfigs.debug
+        }
+    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
