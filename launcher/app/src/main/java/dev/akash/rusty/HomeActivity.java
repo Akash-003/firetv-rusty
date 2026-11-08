@@ -138,7 +138,7 @@ public class HomeActivity extends Activity {
     }
 
     private float dp;
-    private int headerH, scrollY;
+    private int headerH;
     private RecyclerView list;
     private GlassView glass;
     private View header;
@@ -175,6 +175,7 @@ public class HomeActivity extends Activity {
     private final List<Item> items = new ArrayList<>();       // adapter position p is items.get(p - 1)
     private final List<int[]> rows = new ArrayList<>();       // adapter positions of each focusable grid row
     private final List<Integer> rowTops = new ArrayList<>();  // y of each grid row's top, in page pixels
+    private final List<Integer> posTops = new ArrayList<>();  // y of each adapter position's top, in page pixels
     private boolean appsExpanded;
 
     private int zone = DOCK, topIdx, dockIdx, gridRow, gridCol;
@@ -241,7 +242,6 @@ public class HomeActivity extends Activity {
         list.setAdapter(new Adapter());
         list.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override public void onScrolled(@NonNull RecyclerView rv, int dx, int dy) {
-                scrollY += dy;
                 glass.invalidate();
             }
         });
@@ -397,9 +397,12 @@ public class HomeActivity extends Activity {
         else { View v = now; glass.moveTo(out -> bounds(v, out, zone == TOP ? 22 * dp : 8 * dp), animate); }
 
         int target = zone == GRID ? rowTops.get(gridRow) - px(TOP_INSET_DP) : 0;
-        if (target != scrollY) {
-            if (animate) list.smoothScrollBy(0, target - scrollY, new DecelerateInterpolator(2f), 380);
-            else list.scrollBy(0, target - scrollY);
+        // Measure where the page really is (fast key presses interrupt scrolls, so a running tally drifts)
+        list.stopScroll();
+        int delta = target - actualScroll();
+        if (delta != 0) {
+            if (animate) list.smoothScrollBy(0, delta, new DecelerateInterpolator(2f), 380);
+            else list.scrollBy(0, delta);
         }
         parallax(animate);
     }
@@ -681,6 +684,8 @@ public class HomeActivity extends Activity {
         items.clear();
         rows.clear();
         rowTops.clear();
+        posTops.clear();
+        posTops.add(0); // the header
         int y = headerH;
         if (!apps.isEmpty()) {
             boolean folds = apps.size() > COLS;
@@ -699,11 +704,13 @@ public class HomeActivity extends Activity {
 
     private int addSection(String title, List<Item> tiles, int y) {
         items.add(new Item(T_TITLE, null, null, title));
+        posTops.add(y);
         y += px(TITLE_H_DP);
         for (int i = 0; i < tiles.size(); i += COLS) {
             int[] row = new int[Math.min(COLS, tiles.size() - i)];
             for (int k = 0; k < row.length; k++) {
                 items.add(tiles.get(i + k));
+                posTops.add(y);
                 row[k] = items.size(); // adapter position = index + 1 (header is 0)
             }
             rows.add(row);
@@ -711,6 +718,17 @@ public class HomeActivity extends Activity {
             y += px(ROW_H_DP);
         }
         return y;
+    }
+
+    /** How far the page is scrolled right now, from the topmost laid-out item's known page position. */
+    private int actualScroll() {
+        RecyclerView.LayoutManager lm = list.getLayoutManager();
+        for (int i = 0; i < list.getChildCount(); i++) {
+            View c = list.getChildAt(i);
+            int p = list.getChildAdapterPosition(c);
+            if (p != RecyclerView.NO_POSITION && p < posTops.size()) return posTops.get(p) - lm.getDecoratedTop(c);
+        }
+        return 0;
     }
 
     /** {row, col} of the grid item with this key, or null. */
