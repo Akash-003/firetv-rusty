@@ -191,3 +191,7 @@ Press Menu to see it. Delete the file to go back to the plain `#07080D` backgrou
 - Background colour: `bg` in `res/values/colors.xml`.
 - Columns: `COLS` in `HomeActivity.java`. Tile width × columns must fit the 864 dp content width.
 - Tile/row sizes: `tile.xml` and `ROW_H_DP` must stay in sync.
+
+## Licence
+
+MIT, see [LICENSE](LICENSE). Third-party files keep their own terms: the Outfit font (SIL OFL 1.1), the Ruska wallpaper (MIT, CleanYourTV) and the channel logos, which are their broadcasters' trademarks and not covered by this licence (`channels/CREDITS.md`).
